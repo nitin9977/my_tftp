@@ -1,0 +1,9 @@
+tftp_c:client.o client_op.o
+	cc -g client.o client_op.o -o tftp_c
+	rm *.o
+client.o:client.c
+	cc -g -c client.c
+client_op.o:client_op.c
+	cc -g -c client_op.c
+clear:
+	rm *.o 

@@ -1,0 +1,9 @@
+tftp_s:server.o server_op.o
+	cc -g server.o server_op.o -o tftp_s
+	rm *.o
+server.o:server.c
+	cc -g -c server.c
+server_op.o:server_op.c
+	cc -g -c server_op.c
+clear:
+	rm *.o 
