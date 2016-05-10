@@ -2,12 +2,14 @@
 tftp implementation using c
 simple tftp implementation in C lang using UDP
 -----------------------------------------------------------------------------------------------------------
+
 how to install------
-make -f makefile_client           //to create client executable
-make -f makefile_server           //to create server executable
+make -f makefile_client             //to create client executable
+make -f makefile_server            //to create server executable
 -----------------------------------------------------------------------------------------------------------
+
 RRQ
-The read request (RRQ) message is used by the client to establish a connection for
+  The read request (RRQ) message is used by the client to establish a connection for
 reading data from the server.
 The RRQ message fields are as follows:
 ❑ OpCode. The first field is a 2-byte operation code. The value is 1 for the RRQ
@@ -20,12 +22,14 @@ mode field is terminated by another 1-byte field of 0s. The mode can be one of t
 strings: “netascii” (for an ASCII file) or “octet” (for a binary file). The file name
 and mode fields can be in upper- or lowercase, or a combination of both.
 -----------------------------------------------------------------------------------------------------------
+
 WRQ
-The write request (WRQ) message is used by the client to establish a connection for
+  The write request (WRQ) message is used by the client to establish a connection for
 writing data to the server.
 -----------------------------------------------------------------------------------------------------------
+
 DATA
-The data (DATA) message is used by the client or the server to send blocks of data.
+  The data (DATA) message is used by the client or the server to send blocks of data.
 The DATA message fields are as follows:
 ❑ OpCode. The first field is a 2-byte operation code. The value is 3 for the DATA
 message.
@@ -40,8 +44,9 @@ indicator. If the data in the file happens to be an exact multiple of 512 bytes,
 sender must send one extra block of zero bytes to show the end of transmission.
 Data can be transferred in either NVT ASCII (netascii) or binary octet (octet).
 -----------------------------------------------------------------------------------------------------------
+
 ACK
-The acknowledge (ACK) message is used by the client or server to acknowledge
+  The acknowledge (ACK) message is used by the client or server to acknowledge
 the receipt of a data block. The message is only 4 bytes long.
 The ACK message fields are as follows:
 ❑ OpCode. The first field is a 2-byte operation code. The value is 4 for the ACK
@@ -52,8 +57,9 @@ The ACK message can also be a response to a WRQ. It is sent by the server to ind
 that it is ready to receive data from the client. In this case the value of the block number
 field is 0. An example of an ACK message is given in a later section.
 -----------------------------------------------------------------------------------------------------------
+
 ERROR
-The ERROR message is used by the client or the server when a connection cannot be
+  The ERROR message is used by the client or the server when a connection cannot be
 established or when there is a problem during data transmission. It can be sent as a negative
 response to RRQ or WRQ. It can also be used if the next block cannot be transferred
 during the actual data transfer phase. The error message is not used to declare a
