@@ -67,8 +67,7 @@ damaged or duplicated message.
 The ERROR message fields are as follows:
 ❑ OpCode. The first field is a 2-byte operation code. The value is 5 for the ERROR
 message.
-❑ Error number. This 2-byte field defines the type of error. Table 21.8 shows the
-error numbers and their corresponding meanings.
+❑ Error number. This 2-byte field defines the type of error. 
 ❑ Error data. This variable-byte field contains the textual error data and is terminated
 by a 1-byte field of 0s.
 -----------------------------------------------------------------------------------------------------------
