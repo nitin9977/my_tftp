@@ -1,5 +1,4 @@
 # my_tftp
-tftp implementation using c
 simple tftp implementation in C lang using UDP
 -----------------------------------------------------------------------------------------------------------
 
@@ -46,28 +45,15 @@ Data can be transferred in either NVT ASCII (netascii) or binary octet (octet).
 -----------------------------------------------------------------------------------------------------------
 
 # ACK
-  The acknowledge (ACK) message is used by the client or server to acknowledge
-the receipt of a data block. The message is only 4 bytes long.
-The ACK message fields are as follows:
-❑ OpCode. The first field is a 2-byte operation code. The value is 4 for the ACK
-message.
-❑ Block number. The next field is a 2-byte field containing the number of the block
-received.
-The ACK message can also be a response to a WRQ. It is sent by the server to indicate
-that it is ready to receive data from the client. In this case the value of the block number
-field is 0. An example of an ACK message is given in a later section.
+  The acknowledge (ACK) message is used by the client or server to acknowledge the receipt of a data block. The message is only 4 bytes long. The ACK message fields are as follows:
+    ❑ OpCode. The first field is a 2-byte operation code. The value is 4 for the ACK message.
+    ❑ Block number. The next field is a 2-byte field containing the number of the block received.
+  The ACK message can also be a response to a WRQ. It is sent by the server to indicate that it is ready to receive data from the client. In this case the value of the block number field is 0. An example of an ACK message is given in a later section.
 -----------------------------------------------------------------------------------------------------------
 
 # ERROR
-  The ERROR message is used by the client or the server when a connection cannot be
-established or when there is a problem during data transmission. It can be sent as a negative
-response to RRQ or WRQ. It can also be used if the next block cannot be transferred
-during the actual data transfer phase. The error message is not used to declare a
-damaged or duplicated message.
-The ERROR message fields are as follows:
-❑ OpCode. The first field is a 2-byte operation code. The value is 5 for the ERROR
-message.
-❑ Error number. This 2-byte field defines the type of error. 
-❑ Error data. This variable-byte field contains the textual error data and is terminated
-by a 1-byte field of 0s.
+  The ERROR message is used by the client or the server when a connection cannot be established or when there is a problem during data transmission. It can be sent as a negative response to RRQ or WRQ. It can also be used if the next block cannot be transferred during the actual data transfer phase. The error message is not used to declare a damaged or duplicated message. The ERROR message fields are as follows:
+    ❑ OpCode. The first field is a 2-byte operation code. The value is 5 for the ERROR message.
+    ❑ Error number. This 2-byte field defines the type of error. 
+    ❑ Error data. This variable-byte field contains the textual error data and is terminated by a 1-byte field of 0s.
 -----------------------------------------------------------------------------------------------------------
