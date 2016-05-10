@@ -53,7 +53,7 @@ Data can be transferred in either NVT ASCII (netascii) or binary octet (octet).
 
 # ERROR
   The ERROR message is used by the client or the server when a connection cannot be established or when there is a problem during data transmission. It can be sent as a negative response to RRQ or WRQ. It can also be used if the next block cannot be transferred during the actual data transfer phase. The error message is not used to declare a damaged or duplicated message. The ERROR message fields are as follows:
-    ❑ OpCode. The first field is a 2-byte operation code. The value is 5 for the ERROR message.
-    ❑ Error number. This 2-byte field defines the type of error. 
-    ❑ Error data. This variable-byte field contains the textual error data and is terminated by a 1-byte field of 0s.
+  ❑ OpCode. The first field is a 2-byte operation code. The value is 5 for the ERROR message.
+  ❑ Error number. This 2-byte field defines the type of error. 
+  ❑ Error data. This variable-byte field contains the textual error data and is terminated by a 1-byte field of 0s.
 -----------------------------------------------------------------------------------------------------------
